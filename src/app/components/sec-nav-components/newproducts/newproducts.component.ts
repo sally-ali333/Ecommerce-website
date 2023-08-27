@@ -32,7 +32,7 @@ export class NewproductsComponent implements OnInit {
           this.diffDays = Math.ceil(this.diffTime/ (1000 * 60 * 60 * 24));
 
 
-          if ((this.diffDays < 120)) {
+          if ((this.diffDays < 200)) {
             this.newres.push(res.data[i]);
           }
           
