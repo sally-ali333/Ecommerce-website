@@ -1,0 +1,26 @@
+.title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.best-seller {
+    top: 10%;
+    left: 5%;
+    font-size: 13px;
+}
+
+.heart-icon {
+    top: 2%;
+    right: 5%;
+    color: var(--sec-color);
+
+}
+
+.heart-icon:active {
+    color: var(--main-color) !important;
+}
+
+/* .heart-icon:hover {
+color: var(--main-color);
+} */

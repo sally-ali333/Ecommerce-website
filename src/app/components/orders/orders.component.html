@@ -1,0 +1,87 @@
+<div class="container my-5 bg-main-light py-5">
+  <h2 class="sec-heading mb-5">My Orders</h2>
+
+  <div class="text-center" *ngIf="noOrderMsg">
+    <h4 class="fw-semibold mb-0 fs-5">You have no previous orders</h4>
+
+    <p>
+      We have many items available across our wide range of sellers. Start
+      ordering today!
+    </p>
+    <button class="btn bg-main">
+      <a routerLink="/home" class="text-white">Continue shopping </a>
+    </button>
+  </div>
+
+  <div class="row" *ngIf="!noOrderMsg">
+    <div class="col-2">
+      <div class="main">
+        <div *ngFor="let i of allOrders; let m = index">
+          <button class="btn btn-sm main-btn mb-2" (click)="showDetils(i._id)">
+            Order {{ m + 1 }}
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-10" *ngIf="showOrder">
+      <div class="details">
+        <table>
+          <tr>
+            <td>Total Order Price</td>
+            <td>:</td>
+            <td>{{ OrderDetails.totalOrderPrice }} EGP</td>
+          </tr>
+          <tr>
+            <td>Payment Method Type</td>
+            <td>:</td>
+            <td>{{ OrderDetails.paymentMethodType }}</td>
+          </tr>
+          <tr>
+            <td>Is Paid</td>
+            <td>:</td>
+            <td>
+              {{ OrderDetails.isPaid | paidOrder }}
+            </td>
+          </tr>
+          <tr>
+            <td>Shipping Price</td>
+            <td>:</td>
+            <td>{{ OrderDetails.shippingPrice }}</td>
+          </tr>
+          <tr>
+            <td>Tax Price</td>
+            <td>:</td>
+            <td>{{ OrderDetails.taxPrice }}</td>
+          </tr>
+          <tr>
+            <td>Created At</td>
+            <td>:</td>
+            <td>{{ OrderDetails.createdAt | getDate }}</td>
+          </tr>
+          <tr>
+            <td>Shipping Address</td>
+            <td>:</td>
+            <td>
+              {{ OrderDetails.shippingAddress.details }}
+            </td>
+          </tr>
+          <tr>
+            <td>Order Items</td>
+            <td>:</td>
+            <td>
+              <p *ngFor="let x of OrderDetails.cartItems">
+                <img
+                  [src]="x.product.imageCover"
+                  alt="product"
+                  class="product-img me-2"
+                />
+                <span>{{ x.product.title }} /</span>
+                <span>qty({{ x.count }})</span>
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

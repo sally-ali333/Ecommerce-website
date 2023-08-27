@@ -1,0 +1,71 @@
+<div class="container my-5 bg-main-light py-5">
+  <div class="fs-5 fw-bold mb-4">
+    <i class="fa-sharp fa-solid fa-circle-check me-2"></i>
+    <span>Your order is Done </span>
+  </div>
+  <div class="details">
+    <table>
+      <tr>
+        <td>Total Order Price</td>
+        <td>:</td>
+        <td>{{ OrderDetails.totalOrderPrice }} EGP</td>
+      </tr>
+      <tr>
+        <td>Payment Method Type</td>
+        <td>:</td>
+        <td>{{ OrderDetails.paymentMethodType }}</td>
+      </tr>
+      <tr>
+        <td>Is Paid</td>
+        <td>:</td>
+        <td>
+          {{ OrderDetails.isPaid | paidOrder }}
+        </td>
+      </tr>
+      <tr>
+        <td>Shipping Price</td>
+        <td>:</td>
+        <td>{{ OrderDetails.shippingPrice }}</td>
+      </tr>
+      <tr>
+        <td>Tax Price</td>
+        <td>:</td>
+        <td>{{ OrderDetails.taxPrice }}</td>
+      </tr>
+      <tr>
+        <td>Created At</td>
+        <td>:</td>
+        <td>{{ OrderDetails.createdAt | getDate }}</td>
+      </tr>
+      <tr>
+        <td>Shipping Address</td>
+        <td>:</td>
+        <td>
+          {{ OrderDetails.shippingAddress.details }}
+        </td>
+      </tr>
+      <tr>
+        <td>Order Items</td>
+        <td>:</td>
+        <td>
+          <p *ngFor="let x of OrderDetails.cartItems">
+            <img
+              [src]="x.product.imageCover"
+              alt="product"
+              class="product-img me-2"
+            />
+            <span>{{ x.product.title }} /</span>
+            <span>qty({{ x.count }})</span>
+          </p>
+        </td>
+      </tr>
+    </table>
+
+    <div class="mt-5">
+      <span class="fs-6">If you want to see your previous orders</span>
+      <button class="btn bg-main btn-sm mx-2">
+        <a routerLink="/allorders" class="text-white">Click here</a>
+      </button>
+    </div>
+  </div>
+</div>

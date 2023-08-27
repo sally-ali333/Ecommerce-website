@@ -1,0 +1,78 @@
+<div class="container my-5">
+  <div class="text-center mb-5">
+    <p class="fs-6">Welcome back!</p>
+    <p class="fw-semibold fs-5 mb-3">Sign in to your account</p>
+    <a [routerLink]="'/signup'">
+      <span> Don't have an account? </span>
+      <span class="text-main fw-bold">Sign Up</span>
+    </a>
+  </div>
+
+  <div *ngIf="errorMsg" class="main-form alert alert-danger w-50 mx-auto">
+    {{ errorMsg }}
+  </div>
+
+  <form [formGroup]="signInForm" (ngSubmit)="signIn(signInForm)" class="main-form  w-50 mx-auto">
+    <label for="email">Email:</label>
+    <input
+      type="email"
+      id="email"
+      formControlName="email"
+      class="form-control mb-2"
+    />
+    <div
+      *ngIf="
+        signInForm.get('email')?.errors &&
+        (signInForm.get('email')?.touched || notValidForm)
+      "
+      class="alert alert-danger"
+    >
+      <p *ngIf="signInForm.get('email')?.getError('required')">
+        Email is required
+      </p>
+      <p *ngIf="signInForm.get('email')?.getError('email')">Email is invalid</p>
+    </div>
+
+    <label for="password">password:</label>
+    <div class="position-relative">
+    <input
+      matInput
+      [type]="hide ? 'password' : 'text'"
+      id="password"
+      formControlName="password"
+      class="form-control mb-2"
+    />
+    <button
+      mat-icon-button
+      matSuffix
+      (click)="hide = !hide"
+      [attr.aria-label]="'Hide password'"
+      [attr.aria-pressed]="hide" 
+      class="position-absolute top-0 end-0"
+    >
+      <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+    </button>
+    </div>
+    <div
+      *ngIf="
+        signInForm.get('password')?.errors &&
+        (signInForm.get('password')?.touched || notValidForm)
+      "
+      class="alert alert-danger"
+    >
+      <p *ngIf="signInForm.get('password')?.getError('required')">
+        password is required
+      </p>
+      <p *ngIf="signInForm.get('password')?.getError('pattern')">
+        password is invalid
+      </p>
+    </div>
+    <div class="d-flex justify-content-between align-items-center">
+      <a [routerLink]="'/forgot-password'"> Forgot your password? </a>
+      <button type="submit" class="btn bg-main text-white">
+        <i *ngIf="loading" class="fa fa-spinner fa-spin"></i>
+        <span *ngIf="!loading">Sign In</span>
+      </button>
+    </div>
+  </form>
+</div>

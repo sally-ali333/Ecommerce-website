@@ -1,0 +1,63 @@
+<div class="container my-5 bg-main-light p-5">
+  <h2 class="sec-heading mb-5">My Wishlist</h2>
+
+  <div class="text-center" *ngIf="noProductMsg">
+    <h4 class="fw-semibold mb-0 fs-5">Ready to make a wish?</h4>
+
+    <p>
+      Start adding items you love to your wishlist by tapping on the heart icon
+    </p>
+    <button class="btn bg-main">
+      <a routerLink="/home" class="text-white">Continue shopping </a>
+    </button>
+  </div>
+
+  <div *ngIf="!noProductMsg">
+    <!-- <p class="fs-5">
+      Number of items :
+      <span class="fw-bold text-main"> {{ wishlistProducts.count }}</span>
+    </p> -->
+    <div
+      class="row align-items-center my-2 py-2"
+      *ngFor="let item of wishlistProducts.data; let i = last"
+      [class.border-bottom]="!i"
+    >
+      <div class="col-md-2">
+        <div class="image">
+          <img [src]="item.imageCover" alt="item" class="img-fluid" />
+        </div>
+      </div>
+      <div class="col-md-10">
+        <div class="content">
+          <h6 class="fs-6">{{ item.title }}</h6>
+          <div class="price mb-2">
+            <div *ngIf="item?.priceAfterDiscount; else test">
+              <span class="text-decoration-line-through text-muted me-5"
+                >{{ item.price }} EGP</span
+              >
+              <span class="text-danger">{{ item.priceAfterDiscount }} EGP</span>
+            </div>
+            <ng-template #test>
+              <div>
+                <span>{{ item.price }} EGP</span>
+              </div>
+            </ng-template>
+          </div>
+
+          <button
+            class="btn bg-main text-white btn-sm me-3"
+            (click)="addToCart(item.id)"
+          >
+            + Add To Cart
+          </button>
+          <button
+            class="btn btn-sm sec-btn"
+            (click)="removeFromWishlist(item.id)"
+          >
+            <i class="fa-solid fa-trash-can me-1"></i>Remove
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

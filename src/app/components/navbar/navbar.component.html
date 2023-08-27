@@ -1,0 +1,68 @@
+<nav class="navbar bg-white">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" [routerLink]="'/'">
+      <img src="assets/images/logoss.png" class="logoimg" alt="logomarket" />
+      <span class="go fw-bolder fs-1">Go</span
+      ><span class="market fw-semibold fs-1">Market</span>
+    </a>
+    <ul class="list-unstyled" *ngIf="!isLoggedIn">
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="'/signin'">
+          <i class="fa-solid fa-user me-1"></i>Sign In</a
+        >
+      </li>
+    </ul>
+    <ul class="list-unstyled d-flex align-items-center" *ngIf="isLoggedIn">
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          welcome
+          <span class="text-main fw-bolder text-capitalize">{{ name }}</span>
+        </a>
+        <ul class="dropdown-menu">
+          <li class="nav-item">
+            <a class="dropdown-item" routerLink="/allorders"
+              ><i class="fa-solid fa-shop"></i>Orders</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="dropdown-item" routerLink="/wishlist"
+              ><i class="fa-regular fa-heart"></i>Wishlist</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="dropdown-item" routerLink="/profile"
+              ><i class="fa-regular fa-user"></i>Profile</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="dropdown-item" routerLink="/address"
+              ><i class="fa-regular fa-address-book"></i>Address</a
+            >
+          </li>
+          <li><hr class="dropdown-divider" /></li>
+          <li class="nav-item" (click)="signOut()">
+            <a class="dropdown-item">
+              <i class="fa-solid fa-right-from-bracket"></i>sign out
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <span class="mx-2">|</span>
+
+      <li class="nav-item position-relative">
+        <a class="nav-link" [routerLink]="'/cart'">
+          <i class="fa fa-shopping-cart text-main"> </i>
+          <span class="badge fw-normal bg-main small position-absolute bottom-100 end-0">{{
+            noOfItems
+          }}</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>

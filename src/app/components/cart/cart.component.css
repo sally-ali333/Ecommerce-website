@@ -1,0 +1,17 @@
+@media screen and (max-width: 768px) {
+    .heading,
+    .productdet {
+        text-align: center;
+    }
+
+    img {
+         margin-bottom: 10px;
+    }
+
+    .buttons button {
+
+        display: block;
+        margin: 0px auto 20px;
+        width: 200px;
+    }
+}

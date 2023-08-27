@@ -1,0 +1,145 @@
+<div class="container my-5 bg-main-light p-5">
+  <h2 class="sec-heading">My Addresses</h2>
+
+  <div
+    class="py-2"
+    *ngFor="let i of allAddresses; let x = last; let m = index"
+    [class.border-bottom]="!x"
+  >
+    <div class="d-flex align-items-center mb-2">
+      <h6 class="fw-bold fs-5 m-0 p-0 me-4">Address {{ m + 1 }}</h6>
+      <button class="btn sec-btn btn-sm" (click)="deleteAddress(i._id)">
+        <i class="fa-solid fa-trash-can"></i>Remove
+      </button>
+    </div>
+
+    <table>
+      <tr>
+        <td>Name :</td>
+        <td></td>
+        <td>{{ i.name }}</td>
+      </tr>
+      <tr>
+        <td>City :</td>
+        <td></td>
+        <td>{{ i.city }}</td>
+      </tr>
+      <tr>
+        <td>Address details :</td>
+        <td></td>
+        <td>{{ i.details }}</td>
+      </tr>
+      <tr>
+        <td>Phone :</td>
+        <td></td>
+        <td>{{ i.phone }}</td>
+      </tr>
+    </table>
+  </div>
+
+  <div>
+    <button class="btn main-btn my-3" (click)="add()">
+      +Add New Address
+    </button>
+
+    <div *ngIf="showForm" class="w-50 mx-auto">
+      <div *ngIf="errorMsg" class="alert alert-danger">{{ errorMsg }}</div>
+      <div *ngIf="successMsg" class="alert alert-success">
+        <i class="fa-solid fa-check me-2"></i> Your Address is added
+      </div>
+      <form
+        [formGroup]="AddAddressForm"
+        (ngSubmit)="addAddress(AddAddressForm)"
+      >
+        <label for="name">Name :</label>
+        <input
+          type="text"
+          id="name"
+          class="form-control mb-4"
+          formControlName="name"
+          placeholder="Home,Work..etc"
+        />
+        <div
+          *ngIf="
+            AddAddressForm.get('name')?.errors &&
+            (AddAddressForm.get('name')?.touched || notValidForm)
+          "
+          class="alert alert-danger"
+        >
+          <p *ngIf="AddAddressForm.get('name')?.getError('required')">
+            Name is required
+          </p>
+        </div>
+
+        <div class="city">
+          <label for="city">City :</label>
+          <select
+            class="form-select-sm mb-4 mx-2"
+            aria-label="Default select example"
+            id="city"
+            formControlName="city"
+          >
+            <option *ngFor="let i of cityList">{{ i.name }}</option>
+          </select>
+          <div
+            class="text-danger mb-5"
+            *ngIf="
+              AddAddressForm.get('city')?.errors &&
+              (AddAddressForm.get('city')?.touched || notValidForm)
+            "
+          >
+            <p *ngIf="AddAddressForm.get('city')?.getError('required')">
+              city is required
+            </p>
+          </div>
+        </div>
+
+        <label for="details">Address details : </label>
+        <input
+          type="text"
+          id="details"
+          class="form-control mb-4"
+          formControlName="details"
+        />
+        <div
+          class="text-danger mb-5"
+          *ngIf="
+            AddAddressForm.get('details')?.errors &&
+            (AddAddressForm.get('details')?.touched || notValidForm)
+          "
+        >
+          <p *ngIf="AddAddressForm.get('details')?.getError('required')">
+            details of Address is required
+          </p>
+        </div>
+
+        <label for="phone">phone:</label>
+        <input
+          type="tel"
+          id="phone"
+          formControlName="phone"
+          class="form-control mb-4"
+        />
+        <div
+          *ngIf="
+            AddAddressForm.get('phone')?.errors &&
+            (AddAddressForm.get('phone')?.touched || notValidForm)
+          "
+          class="alert alert-danger"
+        >
+          <p *ngIf="AddAddressForm.get('phone')?.getError('required')">
+            phone is required
+          </p>
+          <p *ngIf="AddAddressForm.get('phone')?.getError('pattern')">
+            phone lenght is 11 nums & start with 01 as 01088888888
+          </p>
+        </div>
+
+        <button type="submit" class="btn bg-main text-white d-block ms-auto">
+          <i *ngIf="loading" class="fa fa-spinner fa-spin"></i>
+          <span *ngIf="!loading">Add</span>
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

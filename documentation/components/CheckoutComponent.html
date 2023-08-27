@@ -1,0 +1,828 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>app1 documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">app1 documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  CheckoutComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/orders/checkout/checkout.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-checkout</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./checkout.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./checkout.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#cartId" >cartId</a>
+                            </li>
+                            <li>
+                                <a href="#cityList" >cityList</a>
+                            </li>
+                            <li>
+                                <a href="#isLoading" >isLoading</a>
+                            </li>
+                            <li>
+                                <a href="#notValidForm" >notValidForm</a>
+                            </li>
+                            <li>
+                                <a href="#shippingAddress" >shippingAddress</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#getcities" >getcities</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#payOnline" >payOnline</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(_cityService: <a href="../injectables/CityService.html" target="_self">CityService</a>, _ordersService: <a href="../injectables/OrdersService.html" target="_self">OrdersService</a>, _activatedRoute: ActivatedRoute, _cartService: <a href="../injectables/CartService.html" target="_self">CartService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/components/orders/checkout/checkout.component.ts:17</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>_cityService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/CityService.html" target="_self" >CityService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_ordersService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/OrdersService.html" target="_self" >OrdersService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_activatedRoute</td>
+                                                  
+                                                        <td>
+                                                                    <code>ActivatedRoute</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_cartService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/CartService.html" target="_self" >CartService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getcities"></a>
+                    <span class="name">
+                        <span ><b>getcities</b></span>
+                        <a href="#getcities"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getcities()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="48"
+                            class="link-to-prism">src/app/components/orders/checkout/checkout.component.ts:48</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="35"
+                            class="link-to-prism">src/app/components/orders/checkout/checkout.component.ts:35</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="payOnline"></a>
+                    <span class="name">
+                        <span ><b>payOnline</b></span>
+                        <a href="#payOnline"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>payOnline(form: FormGroup)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="57"
+                            class="link-to-prism">src/app/components/orders/checkout/checkout.component.ts:57</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>form</td>
+                                    <td>
+                                            <code>FormGroup</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cartId"></a>
+                    <span class="name">
+                        <span ><b>cartId</b></span>
+                        <a href="#cartId"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/components/orders/checkout/checkout.component.ts:17</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cityList"></a>
+                    <span class="name">
+                        <span ><b>cityList</b></span>
+                        <a href="#cityList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>any[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/components/orders/checkout/checkout.component.ts:14</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isLoading"></a>
+                    <span class="name">
+                        <span ><b>isLoading</b></span>
+                        <a href="#isLoading"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/components/orders/checkout/checkout.component.ts:16</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="notValidForm"></a>
+                    <span class="name">
+                        <span ><b>notValidForm</b></span>
+                        <a href="#notValidForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/components/orders/checkout/checkout.component.ts:15</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="shippingAddress"></a>
+                    <span class="name">
+                        <span ><b>shippingAddress</b></span>
+                        <a href="#shippingAddress"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>FormGroup</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new FormGroup({
+    phone: new FormControl(null, [
+      Validators.required,
+      Validators.pattern(/^01[0125][0-9]{8}$/),
+    ]),
+    city: new FormControl(null, [Validators.required]),
+    details: new FormControl(null, [Validators.required]),
+  })</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/components/orders/checkout/checkout.component.ts:39</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { FormControl, FormGroup, Validators } from &#x27;@angular/forms&#x27;;
+import { CityService } from &#x27;../../../services/city.service&#x27;;
+import { OrdersService } from &#x27;../../../services/orders.service&#x27;;
+import { ActivatedRoute } from &#x27;@angular/router&#x27;;
+import { CartService } from &#x27;src/app/services/cart.service&#x27;;
+
+@Component({
+  selector: &#x27;app-checkout&#x27;,
+  templateUrl: &#x27;./checkout.component.html&#x27;,
+  styleUrls: [&#x27;./checkout.component.css&#x27;],
+})
+export class CheckoutComponent implements OnInit {
+  cityList: any[] &#x3D; [];
+  notValidForm: boolean &#x3D; false;
+  isLoading: boolean &#x3D; false;
+  cartId: string &#x3D; &#x27;&#x27;;
+
+  constructor(
+    private _cityService: CityService,
+    private _ordersService: OrdersService,
+    private _activatedRoute: ActivatedRoute,
+    private _cartService: CartService
+  ) {
+    this._activatedRoute.paramMap.subscribe((res: any) &#x3D;&gt; {
+      this.cartId &#x3D; res.params.cartId;
+    });
+
+    //another sol.
+    // this._cartService.cartId.subscribe((res)&#x3D;&gt;{
+    //     this.cartId&#x3D;res;
+    //   })
+  }
+
+  ngOnInit(): void {
+    this.getcities();
+  }
+
+  shippingAddress: FormGroup &#x3D; new FormGroup({
+    phone: new FormControl(null, [
+      Validators.required,
+      Validators.pattern(/^01[0125][0-9]{8}$/),
+    ]),
+    city: new FormControl(null, [Validators.required]),
+    details: new FormControl(null, [Validators.required]),
+  });
+
+  getcities() {
+    this._cityService.getcities().subscribe({
+      next: (res) &#x3D;&gt; {
+        this.cityList &#x3D; res.results;
+      },
+      error: (err) &#x3D;&gt; console.log(err),
+    });
+  }
+
+  payOnline(form:FormGroup) {
+
+    if (form.valid) {
+      this.isLoading &#x3D; true;
+      this._ordersService
+      .goToOnlinepayment(this.cartId, this.shippingAddress.value)
+      .subscribe({
+        next: (res) &#x3D;&gt; {
+          // window.open(res.session.url)
+          window.location.href &#x3D; res.session.url;
+          this.isLoading &#x3D; true;
+        },
+      });
+    }else { 
+      this.notValidForm&#x3D;true
+    }
+
+  
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container my-5 mx-auto w-75&quot;&gt;
+    &lt;form [formGroup]&#x3D;&quot;shippingAddress&quot; (ngSubmit)&#x3D;&quot;payOnline(shippingAddress)&quot;&gt;
+        &lt;label for&#x3D;&quot;phone&quot;&gt;phone&lt;/label&gt;
+        &lt;input type&#x3D;&quot;tel&quot; id&#x3D;&quot;phone&quot; class&#x3D;&quot;form-control mb-4&quot; formControlName&#x3D;&quot;phone&quot;&gt;
+        &lt;div class&#x3D;&quot;text-danger mb-5&quot; *ngIf&#x3D;&quot;shippingAddress.get(&#x27;phone&#x27;)?.errors &amp;&amp;(shippingAddress.get(&#x27;phone&#x27;)?.touched || notValidForm)&quot;&gt;
+         &lt;p *ngIf&#x3D;&quot;shippingAddress.get(&#x27;phone&#x27;)?.getError(&#x27;required&#x27;)&quot;&gt;phone is required&lt;/p&gt;
+          &lt;p *ngIf&#x3D;&quot;shippingAddress.get(&#x27;phone&#x27;)?.getError(&#x27;pattern&#x27;)&quot;&gt;phone lenght is 11 nums &amp; start with 01 as 01088888888 &lt;/p&gt;  
+        &lt;/div&gt;
+
+
+        &lt;label for&#x3D;&quot;city&quot;&gt;city&lt;/label&gt;
+        &lt;select  class&#x3D;&quot;form-select mb-4&quot; aria-label&#x3D;&quot;Default select example&quot; id&#x3D;&quot;city&quot; formControlName&#x3D;&quot;city&quot;&gt;
+            &lt;option *ngFor&#x3D;&quot;let i of cityList&quot;&gt;{{i.name}}&lt;/option&gt;             
+        &lt;/select&gt;
+        &lt;div class&#x3D;&quot;text-danger mb-5&quot; *ngIf&#x3D;&quot;shippingAddress.get(&#x27;city&#x27;)?.errors  &amp;&amp; (shippingAddress.get(&#x27;city&#x27;)?.touched || notValidForm) &quot;  &gt;
+          &lt;p *ngIf&#x3D;&quot;shippingAddress.get(&#x27;city&#x27;)?.getError(&#x27;required&#x27;)&quot;&gt;city is required&lt;/p&gt;
+        &lt;/div&gt;
+        
+        &lt;label for&#x3D;&quot;details&quot;&gt;details&lt;/label&gt;
+        &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;details&quot; class&#x3D;&quot;form-control mb-4&quot; formControlName&#x3D;&quot;details&quot;&gt;
+        &lt;div class&#x3D;&quot;text-danger mb-5&quot; *ngIf&#x3D;&quot;shippingAddress.get(&#x27;details&#x27;)?.errors &amp;&amp; (shippingAddress.get(&#x27;details&#x27;)?.touched || notValidForm) &quot;&gt;
+         &lt;p *ngIf&#x3D;&quot;shippingAddress.get(&#x27;details&#x27;)?.getError(&#x27;required&#x27;)&quot;&gt; details of Address is required&lt;/p&gt;
+        &lt;/div&gt;
+
+        &lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;btn btn-outline-success d-block mx-auto&quot;&gt;
+            &lt;i *ngIf&#x3D;&quot;isLoading&quot; class&#x3D;&quot;fa fa-spinner fa-spin me-2&quot;&gt;&lt;/i&gt;
+            &lt;span&gt;Pay&lt;/span&gt;
+        &lt;/button&gt;
+    &lt;/form&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./checkout.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="container my-5 mx-auto w-75">    <form [formGroup]="shippingAddress" (ngSubmit)="payOnline(shippingAddress)">        <label for="phone">phone</label>        <input type="tel" id="phone" class="form-control mb-4" formControlName="phone">        <div class="text-danger mb-5" *ngIf="shippingAddress.get(\'phone\')?.errors &&(shippingAddress.get(\'phone\')?.touched || notValidForm)">         <p *ngIf="shippingAddress.get(\'phone\')?.getError(\'required\')">phone is required</p>          <p *ngIf="shippingAddress.get(\'phone\')?.getError(\'pattern\')">phone lenght is 11 nums & start with 01 as 01088888888 </p>          </div>        <label for="city">city</label>        <select  class="form-select mb-4" aria-label="Default select example" id="city" formControlName="city">            <option *ngFor="let i of cityList">{{i.name}}</option>                     </select>        <div class="text-danger mb-5" *ngIf="shippingAddress.get(\'city\')?.errors  && (shippingAddress.get(\'city\')?.touched || notValidForm) "  >          <p *ngIf="shippingAddress.get(\'city\')?.getError(\'required\')">city is required</p>        </div>                <label for="details">details</label>        <input type="text" id="details" class="form-control mb-4" formControlName="details">        <div class="text-danger mb-5" *ngIf="shippingAddress.get(\'details\')?.errors && (shippingAddress.get(\'details\')?.touched || notValidForm) ">         <p *ngIf="shippingAddress.get(\'details\')?.getError(\'required\')"> details of Address is required</p>        </div>        <button type="submit" class="btn btn-outline-success d-block mx-auto">            <i *ngIf="isLoading" class="fa fa-spinner fa-spin me-2"></i>            <span>Pay</span>        </button>    </form></div></div>'
+    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BrandComponent', 'selector': 'app-brand'},{'name': 'CartComponent', 'selector': 'app-cart'},{'name': 'CategoriesComponent', 'selector': 'app-categories'},{'name': 'ChangePasswordComponent', 'selector': 'app-change-password'},{'name': 'CheckoutComponent', 'selector': 'app-checkout'},{'name': 'FeaturedproductsComponent', 'selector': 'app-featuredproducts'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoaderComponent', 'selector': 'app-loader'},{'name': 'MainSliderComponent', 'selector': 'app-main-slider'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'OrdersComponent', 'selector': 'app-orders'},{'name': 'ProductDetailsComponent', 'selector': 'app-product-details'},{'name': 'ProductitemComponent', 'selector': 'app-productitem'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'},{'name': 'SignInComponent', 'selector': 'app-sign-in'},{'name': 'SignUpComponent', 'selector': 'app-sign-up'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'CheckoutComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'CheckoutComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,21 @@
+<ul class="categoey-menu dropdown-menu">
+  <li *ngFor="let category of allcategories">
+    <a
+      class="dropdown-item"
+      (mouseover)="getSubCategory(category._id)"
+      [routerLink]="['/productsByCategory',category._id]"
+    >
+      <div class="d-flex align-items-center cursor-pointer">
+        <img [src]="category.image" class="img-category me-3" />
+        <h3 class="mb-0 h6">{{ category.name }}</h3>
+      </div>
+    </a>
+  </li>
+  <ul class="subcategory-menu" *ngIf="openMenu">
+    <li *ngFor="let SubCategory of subCategories">
+      <a class="dropdown-item" [routerLink]="['/productsBySubCategory',SubCategory._id]">
+        <h3 class="mb-0 h6 cursor-pointer">{{ SubCategory.name }}</h3>
+      </a>
+    </li>
+  </ul>
+</ul>

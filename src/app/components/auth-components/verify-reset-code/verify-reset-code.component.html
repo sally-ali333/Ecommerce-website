@@ -1,0 +1,32 @@
+<div class="container my-5">
+  <div class="text-center mb-5">
+    <p class="fw-semibold fs-5">
+      Reset Password Code Sent
+      <i class="fa-solid fa-circle-check"></i>
+    </p>
+    <p>please check your email inbox.</p>
+  </div>
+
+  <div *ngIf="errorMsg" class="main-form alert alert-danger w-50 mx-auto">{{errorMsg}}</div>
+  <form [formGroup]="verifyCodeForm" (ngSubmit)="verifyCode(verifyCodeForm)" class="main-form w-50 mx-auto">
+    <label for="code">Reset Code:</label>
+    <input
+      type="text"
+      id="code"
+      formControlName="resetCode"
+      class="form-control mb-2"
+    />
+    <div  *ngIf="verifyCodeForm.get('resetCode')?.errors &&
+        (verifyCodeForm.get('resetCode')?.touched || notValidForm)"
+    class="alert alert-danger">
+    <p *ngIf="verifyCodeForm.get('resetCode')?.getError('required')">
+        Reset Code is required
+    </p>
+  </div>
+
+    <button type="submit" class="d-block btn bg-main text-white ms-auto">
+      <i *ngIf="loading" class="fa fa-spinner fa-spin"></i>
+      <span *ngIf="!loading">Send</span>
+    </button>
+  </form>
+</div>

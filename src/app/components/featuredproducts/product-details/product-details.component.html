@@ -1,0 +1,42 @@
+<div class="container py-5">
+  <div class="row align-items-center">
+    <div class="col-md-4">
+      <div class="image-container">
+        <owl-carousel-o [options]="customOptions">
+          <ng-container *ngFor="let slide of productDetails.images">
+            <ng-template carouselSlide>
+              <img [src]="slide">
+            </ng-template>
+          </ng-container>
+        </owl-carousel-o>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="content">
+        <h2>{{ productDetails.title }}</h2>
+        <p class="text-muted">{{ productDetails.description }}</p>
+        <p class="text-main fw-bold">{{ productDetails.category.name }}</p>
+        <div class="d-flex justify-content-between align-items-center">
+          <!-- <p class="mb-0">{{ productDetails.price }} EGP</p> -->
+          <div class="price mb-2">
+            <div *ngIf="productDetails?.priceAfterDiscount ;else test">
+              <span class="text-decoration-line-through text-muted me-3">{{ productDetails.price }} EGP</span>
+              <span class="text-danger fw-semibold">{{productDetails.priceAfterDiscount}} EGP</span> 
+           </div>
+           <ng-template #test>
+            <div>
+              <span>{{ productDetails.price }} EGP</span>
+            </div>
+           </ng-template>   
+         </div>
+          <div class="rating">
+            <i class="fa fa-star rating-color"></i>
+            <span>{{ productDetails.ratingsAverage }}</span>
+          </div>
+        </div>
+
+        <button class="btn bg-main w-100 text-white" (click)="addToCart(productDetails.id)">+Add To Cart</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,110 @@
+<div class="container my-5">
+  <form [formGroup]="shippingAddress" (ngSubmit)="onSelected(payment.value)" class="main-form w-50 mx-auto">
+    <label for="phone">Phone :</label>
+    <input
+      type="tel"
+      id="phone"
+      class="form-control mb-4"
+      formControlName="phone"
+    />
+    <div
+      class="text-danger mb-5"
+      *ngIf="
+        shippingAddress.get('phone')?.errors &&
+        (shippingAddress.get('phone')?.touched || notValidForm)
+      "
+    >
+      <p *ngIf="shippingAddress.get('phone')?.getError('required')">
+        phone is required
+      </p>
+      <p *ngIf="shippingAddress.get('phone')?.getError('pattern')">
+        phone lenght is 11 nums & start with 01 as 01088888888
+      </p>
+    </div>
+
+    <div class="city">
+      <label for="city">City :</label>
+      <select
+        class="form-select-sm mb-4 mx-2"
+        aria-label="Default select example"
+        id="city"
+        formControlName="city"
+      >
+        <option *ngFor="let i of cityList">{{ i.name }}</option>
+      </select>
+      <div
+        class="text-danger mb-5"
+        *ngIf="
+          shippingAddress.get('city')?.errors &&
+          (shippingAddress.get('city')?.touched || notValidForm)
+        "
+      >
+        <p *ngIf="shippingAddress.get('city')?.getError('required')">
+          city is required
+        </p>
+      </div>
+    </div>
+
+    <div class="detailsAdress">
+      <label for="details">Address details : </label>
+      <select
+        class="form-select-sm mb-4 mx-2"
+        aria-label="Default select example"
+        id="details"
+        formControlName="details"
+      >
+        <option selected>No Address</option>
+        <option
+          *ngFor="let i of allAddresses; let x = last; let m = index"
+          [class.border-bottom]="!x"
+        >
+          <!-- <h6 class="fw-semibold fs-6 m-0 me-4">Address{{ m + 1 }} :</h6> -->
+          <ul>
+            <li class="mx-2">{{ i.name }} /</li>
+            <li class="mx-2">{{ i.city }} /</li>
+            <li class="mx-2">{{ i.details }}</li>
+          </ul>
+        </option>
+      </select>
+      <div>Or add another address</div>
+      <input
+        type="text"
+        id="details"
+        class="form-control mb-4"
+        formControlName="details"
+      />
+      <div
+        class="text-danger mb-5"
+        *ngIf="
+          shippingAddress.get('details')?.errors &&
+          (shippingAddress.get('details')?.touched || notValidForm)
+        "
+      >
+        <p *ngIf="shippingAddress.get('details')?.getError('required')">
+          details of Address is required
+        </p>
+      </div>
+    </div>
+
+    <div class="paymentmethod">
+      <label for="payment">Payment Method :</label>
+      <select #payment
+        class="form-select-sm mb-4 mx-2"
+        aria-label="Default select example"
+        id="payment">
+        <option value="cash">Cash Payment</option>
+        <option value="online">Online Payment</option>
+      </select>
+      <!-- <div class="text-danger mb-5" *ngIf="notValidForm">
+        <p>Payment Method is required</p>
+      </div> -->
+    </div>
+
+    <button type="submit" class="btn bg-main text-white d-block ms-auto">
+      <i *ngIf="isLoading" class="fa fa-spinner fa-spin me-2"></i>
+      <span *ngIf="!isLoading">Pay</span>
+    </button>
+  </form>
+
+</div>
+

@@ -1,0 +1,10 @@
+<div class="container my-5">
+    <p class="text-main fw-bold fs-6 mb-5">
+        ( {{ProductNo}} ) New Products added</p>
+    <div class="row row-cols-lg-6 row-cols-md-4 row-cols-sm-2 row-cols-1">
+      <div class="col" *ngFor="let product of allproducts">
+        <app-productitem [product]="product"></app-productitem>
+      </div>
+    </div>
+  </div>
+  

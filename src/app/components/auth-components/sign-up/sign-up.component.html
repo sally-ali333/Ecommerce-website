@@ -1,0 +1,163 @@
+<div class="container my-5">
+  <div class="text-center mb-5">
+    <span class="d-block mx-auto fw-semibold fs-5 mb-3">Create an account</span>
+    <a [routerLink]="'/signin'">
+      <span> Already have an account? </span>
+      <span class="text-main fw-bold">Sign In</span>
+    </a>
+  </div>
+
+  <!-- <h3>{{signUpForm.get('name')?.errors | json}}</h3> -->
+
+  <div *ngIf="errorMsg" class="main-form alert alert-danger w-50 mx-auto">{{ errorMsg }}</div>
+
+  <form [formGroup]="signUpForm" (ngSubmit)="signUp(signUpForm)" class="main-form w-50 mx-auto">
+    <label for="name">Name:</label>
+    <input
+      type="text"
+      id="name"
+      formControlName="name"
+      class="form-control mb-2"
+    />
+    <div
+      *ngIf="
+        signUpForm.get('name')?.errors &&
+        (signUpForm.get('name')?.touched || notValidForm)
+      "
+      class="alert alert-danger"
+    >
+      <p *ngIf="signUpForm.get('name')?.getError('required')">
+        Name is required
+      </p>
+      <p *ngIf="signUpForm.get('name')?.getError('minlength')">
+        minlength is 3
+      </p>
+      <p *ngIf="signUpForm.get('name')?.getError('maxlength')">
+        maxlength is 20
+      </p>
+    </div>
+
+    <label for="email">Email:</label>
+    <input
+      type="email"
+      id="email"
+      formControlName="email"
+      class="form-control mb-2"
+    />
+    <div
+      *ngIf="
+        signUpForm.get('email')?.errors &&
+        (signUpForm.get('email')?.touched || notValidForm)
+      "
+      class="alert alert-danger"
+    >
+      <p *ngIf="signUpForm.get('email')?.getError('required')">
+        Email is required
+      </p>
+      <p *ngIf="signUpForm.get('email')?.getError('email')">Email is invalid</p>
+    </div>
+
+    <label for="password">password:</label>
+    <div class="position-relative">
+      <input
+        matInput
+        [type]="hide ? 'password' : 'text'"
+        class="form-control mb-2"
+        formControlName="password"
+        id="password"
+      />
+      <button
+        mat-icon-button
+        matSuffix
+        (click)="hide = !hide"
+        [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide"
+        class="position-absolute top-0 end-0"
+      >
+        <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+      </button>
+    </div>
+    <div
+      *ngIf="
+        signUpForm.get('password')?.errors &&
+        (signUpForm.get('password')?.touched || notValidForm)
+      "
+      class="alert alert-danger"
+    >
+      <p *ngIf="signUpForm.get('password')?.getError('required')">
+        password is required
+      </p>
+      <p *ngIf="signUpForm.get('password')?.getError('pattern')">
+        invalid..password should have at least 6 char.. uppercase , lowerCase
+        and numbers
+      </p>
+    </div>
+
+    <label for="rePassword"> RePassword:</label>
+    <div class="position-relative">
+      <input
+        matInput
+        [type]="hide ? 'password' : 'text'"
+        class="form-control mb-2"
+        id="rePassword"
+        formControlName="rePassword"
+      />
+      <button
+        mat-icon-button
+        matSuffix
+        (click)="hide = !hide"
+        [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide"
+        class="position-absolute top-0 end-0 "
+      >
+        <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+      </button>
+    </div>
+
+    <div
+      *ngIf="
+        signUpForm.get('rePassword')?.errors &&
+        (signUpForm.get('rePassword')?.touched || notValidForm)
+      "
+      class="alert alert-danger"
+    >
+      <p *ngIf="signUpForm.get('rePassword')?.getError('required')">
+        rePassword is required
+      </p>
+      <p *ngIf="signUpForm.get('rePassword')?.getError('pattern')">
+        rePassword is invalid
+      </p>
+      <p *ngIf="signUpForm.get('rePassword')?.getError('repasswordNotMatch')">
+        repassword is not match password
+      </p>
+    </div>
+
+    <label for="phone">phone:</label>
+    <input
+      type="tel"
+      id="phone"
+      formControlName="phone"
+      class="form-control mb-2"
+    />
+    <div
+      *ngIf="
+        signUpForm.get('phone')?.errors &&
+        (signUpForm.get('phone')?.touched || notValidForm)
+      "
+      class="alert alert-danger"
+    >
+      <p *ngIf="signUpForm.get('phone')?.getError('required')">
+        phone is required
+      </p>
+      <p *ngIf="signUpForm.get('phone')?.getError('pattern')">
+        phone lenght is 11 nums & start with 01 as 01088888888
+      </p>
+    </div>
+
+    <button type="submit" class="btn bg-main text-white d-block ms-auto">
+      <!-- [disabled]="signUpForm.invalid" -->
+      <i *ngIf="loading" class="fa fa-spinner fa-spin"></i>
+      <span *ngIf="!loading">Sign Up</span>
+    </button>
+  </form>
+</div>

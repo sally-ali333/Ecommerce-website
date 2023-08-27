@@ -1,0 +1,84 @@
+<div class="main-form w-50 mx-auto my-5">
+<h5 class="fs-5 fw-bold">General Info :</h5>
+<p class="mb-5">Edit your personal info</p>
+
+<div *ngIf="errorMsg" class="alert alert-danger" >{{ errorMsg }}</div>
+<div *ngIf="successMsg" class="alert alert-success">
+  <i class="fa-solid fa-check me-2"></i> Your info is updated
+</div>
+
+<form [formGroup]="updateForm" (ngSubmit)="updateData(updateForm)" >
+  <label for="name">Name :</label>
+  <input
+    type="text"
+    id="name"
+    class="form-control mb-4"
+    formControlName="name"
+  />
+  <div
+    *ngIf="
+      updateForm.get('name')?.errors &&
+      (updateForm.get('name')?.touched || notValidForm)
+    "
+    class="alert alert-danger"
+  >
+    <p *ngIf="updateForm.get('name')?.getError('required')">Name is required</p>
+
+    <p *ngIf="updateForm.get('name')?.getError('minlength')">
+      min Length is (3)
+    </p>
+    <p *ngIf="updateForm.get('name')?.getError('maxlength')">
+      max Length is (20)
+    </p>
+  </div>
+
+  <label for="email">Email :</label>
+  <input
+    type="email"
+    id="email"
+    class="form-control mb-4"
+    formControlName="email"
+  />
+  <div
+    *ngIf="
+      updateForm.get('email')?.errors &&
+      (updateForm.get('email')?.touched || notValidForm)
+    "
+    class="alert alert-danger"
+  >
+    <p *ngIf="updateForm.get('email')?.getError('required')">
+      Email is required
+    </p>
+
+    <p *ngIf="updateForm.get('email')?.getError('email')">Email is invalid</p>
+  </div>
+
+  <label for="phone">Phone :</label>
+  <input
+    type="phone"
+    id="phone"
+    class="form-control mb-4"
+    formControlName="phone"
+  />
+  <div
+    *ngIf="
+      updateForm.get('phone')?.errors &&
+      (updateForm.get('phone')?.touched || notValidForm)
+    "
+    class="alert alert-danger"
+  >
+    <p *ngIf="updateForm.get('phone')?.getError('required')">
+      phone is required
+    </p>
+
+    <p *ngIf="updateForm.get('phone')?.getError('pattern')">
+      phone lenght is 11 nums & start with 01 as 01088888888
+    </p>
+  </div>
+
+  <button type="submit" class="btn bg-main text-white d-block ms-auto">
+    <i *ngIf="loading" class="fa fa-spinner fa-spin"></i>
+    <span *ngIf="!loading">Update</span>
+  </button>
+</form>
+</div>

@@ -1,0 +1,109 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&display=swap');
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+
+:root {
+    --main-color: rgb(101, 39, 130);
+    --sec-color: rgba(248, 181, 55);
+    --light-color: rgba(101, 39, 130, 0.1);
+    --shadow: rgba(145, 158, 171, .2) 0px 2px 4px -1px, rgba(145, 158, 171, .14) 0px 4px 5px 0px, rgba(145, 158, 171, .12) 0px 1px 10px 0px;
+    --font-family: 'Encode Sans Expanded', sans-serif;
+    --sec-fontfamily: 'Dancing Script', cursive;
+    --rating-color: #ffc908;
+
+}
+
+
+body {
+    font-family: var(--font-family);
+    padding-top: 140px;
+    margin: 0;
+}
+
+.rating-color {
+    color: var(--sec-color);
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+a,
+a:hover {
+    text-decoration: none;
+    cursor: pointer;
+    color: black;
+}
+
+.product:hover {
+    box-shadow: var(--shadow);
+    border: solid 1px var(--main-color);
+}
+
+.product .btn {
+    transition: transform 1s, opacity 1s;
+    transform: translateY(100%);
+    opacity: 0;
+}
+
+.product:hover .btn {
+    opacity: 1;
+    transform: translateY(0%);
+}
+
+.font-sm {
+    font-size: 14px;
+}
+
+::placeholder {
+    font-size: 14px !important;
+}
+
+.text-main {
+    color: var(--main-color);
+}
+
+.text-sec {
+    color: var(--sec-color);
+}
+
+.bg-main {
+    background-color: var(--main-color) !important;
+}
+
+.bg-sec {
+    background-color: var(--sec-color) !important;
+}
+
+.bg-main-light {
+    background-color: var(--light-color) !important;
+}
+
+.main-btn {
+    color: white !important;
+    background-color: var(--main-color) !important;
+}
+
+.sec-btn {
+    color: white !important;
+    background-color: var(--sec-color) !important;
+}
+
+.sec-heading {
+    color:var(--main-color);
+    font-weight: bold !important;
+    text-align: center;
+    font-size: 30px !important;
+}
+
+@media screen and (max-width: 768px) {
+
+    .main-form {
+        width: 100% !important;
+    }
+
+}
+

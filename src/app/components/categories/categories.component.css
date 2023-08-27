@@ -1,0 +1,28 @@
+.img-category {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.categoey-menu {
+    width: 250px;
+    position: relative;
+    border-radius: 0px !important;
+}
+
+.subcategory-menu {
+    border: 1px solid #ccc;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background-color: white;
+    list-style: none;
+    height: 100%;
+    width: 130%;
+    padding-left: 0;
+}
+
+.dropdown-item:hover {
+    background-color: transparent !important;
+    color: var(--sec-color) !important;
+}

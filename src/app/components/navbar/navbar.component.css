@@ -1,0 +1,32 @@
+
+
+.navbar-brand {
+    font-family: var(--sec-fontfamily);
+}
+
+.logoimg{
+    width: 50px;
+}
+
+.go {
+    color:var(--main-color) ;
+}
+
+.market{
+    color:var(--sec-color)
+}
+
+.nav-link {
+    cursor: pointer;
+}
+
+.dropdown-menu i {
+color: var(--sec-color);
+margin-right: 2px;
+}
+
+.dropdown-item {
+    font-size: 12px;
+    color: var(--main-color);
+}
+

@@ -1,0 +1,9 @@
+@media screen and (max-width: 768px) {
+    .content {
+        text-align: center;
+    }
+
+    .image {
+        margin-bottom: 10px;
+    }
+}

@@ -1,0 +1,100 @@
+<div class="container my-5 bg-main-light p-5">
+  <h2 class="sec-heading mb-5">My Cart</h2>
+
+  <div class="text-center" *ngIf="noProductMsg">
+    <h4 class="fw-semibold mb-0 fs-5">Your shopping cart looks empty</h4>
+
+    <p>What are you waiting for?</p>
+    <button class="btn bg-main">
+      <a routerLink="/home" class="text-white">Continue shopping </a>
+    </button>
+  </div>
+  <div *ngIf="cartDetails?.data">
+    <div *ngIf="!noProductMsg">
+      <div class="heading mb-5">
+        <p class="fs-5">
+          Number of items :
+          <span class="fw-bold text-main">
+            {{ cartDetails.numOfCartItems }}</span
+          >
+        </p>
+        <p class="fs-5">
+          Total price :
+          <span class="fw-bold text-main">
+            {{ cartDetails.data.totalCartPrice }}EGP</span
+          >
+        </p>
+      </div>
+      <div class="buttons d-flex justify-content-between mb-5 flex-wrap">
+        <button class="btn bg-main">
+          <a
+            [routerLink]="['/allorders/checkout', cartDetails.data._id]"
+            class="text-white"
+          >
+            <i class="fa-solid fa-cart-shopping"></i>continue to pay
+          </a>
+        </button>
+        <button class="btn sec-btn" (click)="deleteCart()">
+          <i class="fa-solid fa-trash-can"></i>Remove Cart
+        </button>
+      </div>
+
+      <div
+        class="row align-items-center my-2 py-2"
+        *ngFor="let item of cartDetails.data.products; let i = last"
+        [class.border-bottom]="!i"
+      >
+        <div class="col-md-2">
+          <div class="image">
+            <img [src]="item.product.imageCover" alt="item" class="img-fluid" />
+          </div>
+        </div>
+        <div class="col-md-10">
+          <div class="content">
+            <div class="productdet">
+              <h6 class="fs-6">{{ item.product.title }}</h6>
+              <div class="price mb-2">
+                <div *ngIf="item.priceAfterDiscount; else test">
+                  <span class="text-decoration-line-through text-muted me-5"
+                    >{{ item.price }} EGP</span
+                  >
+                  <span class="text-danger"
+                    >{{ item.priceAfterDiscount }} EGP</span
+                  >
+                </div>
+                <ng-template #test>
+                  <div>
+                    <span>{{ item.price }} EGP</span>
+                  </div>
+                </ng-template>
+              </div>
+            </div>
+            <div class="d-flex align-items-center justify-content-between">
+              <div class="d-flex align-items-center">
+                <button
+                  class="btn bg-main text-white btn-sm"
+                  (click)="updateCart(item.product.id, item.count + 1)"
+                >
+                  +
+                </button>
+                <span class="mx-2 text-main fs-6">{{ item.count }}</span>
+                <button
+                  class="btn bg-main text-white btn-sm"
+                  (click)="updateCart(item.product.id, item.count - 1)"
+                >
+                  -
+                </button>
+              </div>
+              <button
+                class="btn sec-btn btn-sm"
+                (click)="deleteItem(item.product.id)"
+              >
+                <i class="fa-solid fa-trash-can"></i>Remove
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

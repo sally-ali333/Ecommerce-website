@@ -1,0 +1,13 @@
+i {
+    color: var(--main-color);
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.payment i {
+    font-size: 22px;
+}
+
+i:hover {
+    color: var(--sec-color);
+}

@@ -1,0 +1,62 @@
+<nav class="navbar navbar-expand-lg bg-main navbar-dark">
+  <div class="container">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link active dropdown-toggle"
+            aria-current="page"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            All categories
+          </a>
+          <app-categories></app-categories>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="'/brand'">Brands</a>
+        </li>
+        <li class="nav-item mt-lg-0 mt-2">
+          <a class="nav-link position-relative" [routerLink]="'/hotoffers'"
+            >Hot offers
+            <span class="sale badge fw-normal bg-sec position-absolute start-0"
+              >sale</span
+            >
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="'/bestseller'">Best sellers</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="'/newproduct'">New products</a>
+        </li>
+      </ul>
+      <div class="d-flex">
+        <input
+          [(ngModel)]="searchTerm"
+          type="text"
+          class="form-control me-2"
+          placeholder="Search Product"
+        />
+        <button
+          class="btn btn-light btn-sm"
+          type="submit" (click)="getproduct(searchTerm)">
+          search
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
